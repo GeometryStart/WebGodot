@@ -1,0 +1,84 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://src/Actors/Actor.gd"
+} ]
+_global_script_class_icons={
+"Actor": ""
+}
+
+[application]
+
+config/name="Digiseiklus_v1.0"
+config/description="Digiseiklus + küsimused + 2 vastast + animated cd/vent"
+run/main_scene="res://src/Levels/Level1.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+CheckpointRed1="*res://objektid/Checkpoint_red1.tscn"
+CheckpointRed2="*res://objektid/Checkpoint_red2.tscn"
+CheckpointRed3="*res://objektid/Checkpoint_red3.tscn"
+CheckpointGreen1="*res://objektid/Checkpoint_green1.tscn"
+CheckpointGreen2="*res://objektid/Checkpoint_green2.tscn"
+CheckpointGreen3="*res://objektid/Checkpoint_green3.tscn"
+CheckpointRed4="*res://objektid/Checkpoint_red4.tscn"
+CheckpointRed5="*res://objektid/Checkpoint_red5.tscn"
+CheckpointGreen4="*res://objektid/Checkpoint_green4.tscn"
+FadeInOut="*res://src/Fade_in_out.gd"
+AudioEffects="*res://Audio Effects.tscn"
+GameData="*res://src/Levels/game_data.gd"
+PlayerData="*res://src/Actors/PlayerData.gd"
+UserData="*res://UserData.gd"
+Savetofile="*res://savetofile.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/stretch/mode="2d"
+
+[input]
+
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="checkpoint"
+2d_physics/layer_3="enemy_red"
+2d_physics/layer_4="enemy_green"
+2d_physics/layer_5="player_damage"
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=1
+quality/2d/use_pixel_snap=true
+environment/default_environment="res://default_env.tres"

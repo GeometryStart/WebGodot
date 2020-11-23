@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Tase_läbitud.gd" type="Script" id=1]
+[ext_resource path="res://assets/Xerox_Serif_dynamicfon_Title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/Background/Esileht/Nupp_katkesta.png" type="Texture" id=3]
+[ext_resource path="res://assets/Background/taust_FINAL (1).png" type="Texture" id=4]
+[ext_resource path="res://assets/Background/Esileht/Nupp_edasi_all.png" type="Texture" id=5]
+
+[node name="Skoorid" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Taust" type="TextureRect" parent="."]
+margin_left = -0.446899
+margin_right = 1919.55
+margin_bottom = 1080.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tase_läbitud" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Katkesta" type="TextureButton" parent="."]
+margin_left = 35.4033
+margin_top = 860.75
+margin_right = 181.403
+margin_bottom = 1068.75
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Edasi" type="TextureButton" parent="."]
+margin_left = 1652.84
+margin_top = 834.939
+margin_right = 1910.84
+margin_bottom = 1092.94
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 666.112
+margin_top = 315.583
+margin_right = 837.112
+margin_bottom = 357.583
+custom_fonts/font = ExtResource( 2 )
+text = "Sinu punktid: %s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="KoodL" type="Label" parent="."]
+margin_left = 662.678
+margin_top = 375.513
+margin_right = 733.678
+margin_bottom = 418.513
+text = "Kood: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Code" type="RichTextLabel" parent="KoodL"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 19.0895
+margin_top = -21.9593
+margin_right = 337.09
+margin_bottom = 9.04074
+tab_size = 7
+text = "KOOD: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KasutajaL" type="Label" parent="."]
+margin_left = 661.693
+margin_top = 270.844
+margin_right = 788.693
+margin_bottom = 313.844
+text = "Kasutaja: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="RichTextLabel" parent="KasutajaL"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 4.78766
+margin_top = -18.7125
+margin_right = 322.788
+margin_bottom = 12.2875
+tab_size = 7
+text = "USERNAME: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Katkesta" to="Tase_läbitud" method="_on_Katkesta_pressed"]
+[connection signal="pressed" from="Edasi" to="." method="_on_Edasi_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

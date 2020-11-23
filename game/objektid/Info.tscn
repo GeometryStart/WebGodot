@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Background/Esileht/Nupp_3.png" type="Texture" id=1]
+[ext_resource path="res://objektid/Info.gd" type="Script" id=2]
+
+[node name="Info" type="TextureButton"]
+margin_left = 1238.0
+margin_right = 1853.0
+margin_bottom = 875.0
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="." to="." method="_on_button_up"]

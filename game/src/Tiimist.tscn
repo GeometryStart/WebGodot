@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://objektid/Info.gd" type="Script" id=1]
+[ext_resource path="res://assets/Background/Esileht/Esileht_nuppudeta.png" type="Texture" id=2]
+[ext_resource path="res://assets/Background/Esileht/Esilhet_popup_nupp_sulge.png" type="Texture" id=3]
+[ext_resource path="res://assets/Background/Esileht/Esileht_popup.png" type="Texture" id=4]
+
+[node name="Tiimist" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="taust_FINAL (1)" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.72327
+margin_top = 2.46934
+margin_right = 1.72327
+margin_bottom = 2.46936
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="taust_FINAL (1)"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="Exit_toMain" type="TextureButton" parent="."]
+margin_left = 1587.23
+margin_top = 152.289
+margin_right = 1677.23
+margin_bottom = 231.289
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Exit_toMain" to="Exit_toMain" method="_on_Exit_toMain_pressed"]

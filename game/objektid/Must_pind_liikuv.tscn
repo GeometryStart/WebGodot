@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/objektid/Pind_transp.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 104.227, 82 )
+
+[node name="Must_pind_liikuv" type="Node2D"]
+
+[node name="StaticBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 790.858, 1054.48 )
+
+[node name="Sprite2" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 9.16431, -499.033 )
+scale = Vector2( 0.37334, 0.801868 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 6.72644, -500.826 )
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="StaticBody2D"]
+playback_process_mode = 0
+playback_speed = 3.0
+playback/speed = 3.0

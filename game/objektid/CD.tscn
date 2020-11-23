@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/objektid/anim/CDanim2.png" type="Texture" id=1]
+[ext_resource path="res://assets/objektid/anim/CDanim1.png" type="Texture" id=2]
+[ext_resource path="res://assets/objektid/anim/CDanim3.png" type="Texture" id=3]
+[ext_resource path="res://assets/objektid/anim/CDanim4.png" type="Texture" id=4]
+[ext_resource path="res://KillPlayer.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 121.863
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -2.34586, -0.698456, 0, 0, 0, 0, -0.412476, -400.905 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "updown_cd"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.99 ]
+}
+
+[node name="CD" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 10.8619, 1.10797 )
+rotation = -1.56629
+scale = Vector2( 0.999999, 0.999998 )
+motion/sync_to_physics = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 0.453081, -12.0772 )
+rotation = 1.56629
+scale = Vector2( 0.223718, 0.233134 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="Area2D" type="Area2D" parent="KinematicBody2D/AnimatedSprite"]
+position = Vector2( -7.96436, 1.46069 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/AnimatedSprite/Area2D"]
+position = Vector2( 8.69501, 0.611834 )
+rotation = -1.96798e-17
+scale = Vector2( 2.82071, 2.82758 )
+shape = SubResource( 2 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 3 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -2.34586, -0.698456 )
+rotation = -1.56629
+rotate = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+position = Vector2( -1.74689, 13.2158 )
+rotation = -4.65662e-09
+scale = Vector2( 0.999999, 0.999998 )
+remote_path = NodePath("../../../KinematicBody2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "updown_cd"
+playback_process_mode = 0
+anims/updown_cd = SubResource( 4 )

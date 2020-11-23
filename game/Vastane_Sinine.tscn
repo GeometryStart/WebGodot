@@ -1,0 +1,96 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/Enemy/sinine/walk/1.png" type="Texture" id=1]
+[ext_resource path="res://assets/Enemy/sinine/walk/2.png" type="Texture" id=2]
+[ext_resource path="res://assets/Enemy/sinine/walk/6.png" type="Texture" id=3]
+[ext_resource path="res://assets/Enemy/sinine/walk/5.png" type="Texture" id=4]
+[ext_resource path="res://assets/Enemy/sinine/walk/4.png" type="Texture" id=5]
+[ext_resource path="res://StompDetector.gd" type="Script" id=6]
+[ext_resource path="res://assets/Enemy/sinine/walk/3.png" type="Texture" id=7]
+[ext_resource path="res://KillPlayer.gd" type="Script" id=8]
+[ext_resource path="res://assets/Enemy/sinine/suremine/dead5.png" type="Texture" id=9]
+[ext_resource path="res://assets/Enemy/sinine/suremine/dead4.png" type="Texture" id=10]
+[ext_resource path="res://assets/Enemy/sinine/suremine/dead1.png" type="Texture" id=11]
+[ext_resource path="res://assets/Enemy/sinine/suremine/dead3.png" type="Texture" id=12]
+[ext_resource path="res://assets/Enemy/sinine/suremine/dead2.png" type="Texture" id=13]
+[ext_resource path="res://Vastane_Sinine.gd" type="Script" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 466.667, 733.222 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 472.191, 66.6667 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 708.865 )
+
+[node name="Vastane_Sinine" type="KinematicBody2D"]
+scale = Vector2( 0.045, 0.045 )
+collision_layer = 4
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "dead"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -22.2222, 155.556 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 640, 0 )
+enabled = true
+cast_to = Vector2( 0, 1000 )
+
+[node name="StompDetector" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 4
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
+modulate = Color( 0.0352941, 0.219608, 0.956863, 1 )
+position = Vector2( -17.2015, -646.583 )
+shape = SubResource( 3 )
+
+[node name="KillPlayer" type="Area2D" parent="."]
+position = Vector2( -502.722, 16.1608 )
+collision_layer = 4
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="KillPlayer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillPlayer"]
+position = Vector2( -16.4375, 133.16 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="KillPlayer2" type="Area2D" parent="."]
+position = Vector2( 483.326, 151.536 )
+collision_layer = 4
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="KillPlayer2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillPlayer2"]
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}

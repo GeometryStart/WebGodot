@@ -1,0 +1,38 @@
+[12-Oct-2020 10:28:55 Europe/Tallinn] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 25
+[12-Oct-2020 11:33:50 Europe/Tallinn] PHP Notice:  Undefined variable: data in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 11:33:50 Europe/Tallinn] PHP Notice:  Undefined variable: data in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 11:36:03 Europe/Tallinn] PHP Notice:  Undefined variable: data in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 11:36:03 Europe/Tallinn] PHP Notice:  Undefined variable: data in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 11:36:39 Europe/Tallinn] PHP Notice:  Undefined index: name in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 11:37:36 Europe/Tallinn] PHP Notice:  Undefined index: name in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 11:37:51 Europe/Tallinn] PHP Notice:  Undefined index: name in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 11:38:07 Europe/Tallinn] PHP Notice:  Undefined index: name in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 11:39:28 Europe/Tallinn] PHP Notice:  Undefined index: name in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 19:47:10 Europe/Tallinn] PHP Notice:  Undefined index: name in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 19:57:52 Europe/Tallinn] PHP Notice:  Undefined index: name in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 20:00:50 Europe/Tallinn] PHP Notice:  Undefined index: name in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 20:21:11 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[12-Oct-2020 20:40:37 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[16-Oct-2020 14:46:07 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[16-Oct-2020 14:46:07 Europe/Tallinn] PHP Notice:  Undefined index: username in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 6
+[16-Oct-2020 17:25:19 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[16-Oct-2020 17:25:19 Europe/Tallinn] PHP Notice:  Undefined index: username in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 6
+[16-Oct-2020 17:35:41 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[16-Oct-2020 17:35:41 Europe/Tallinn] PHP Notice:  Undefined index: username in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 6
+[16-Oct-2020 18:09:10 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[16-Oct-2020 18:09:10 Europe/Tallinn] PHP Notice:  Undefined index: username in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 6
+[17-Oct-2020 11:52:27 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[17-Oct-2020 11:52:27 Europe/Tallinn] PHP Notice:  Undefined index: username in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 6
+[22-Oct-2020 16:54:08 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[22-Oct-2020 16:54:08 Europe/Tallinn] PHP Notice:  Undefined index: username in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 6
+[23-Oct-2020 15:26:30 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[23-Oct-2020 15:26:30 Europe/Tallinn] PHP Notice:  Undefined index: username in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 6
+[23-Oct-2020 15:27:35 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[23-Oct-2020 15:27:35 Europe/Tallinn] PHP Notice:  Undefined index: username in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 6
+[23-Oct-2020 15:29:52 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[23-Oct-2020 15:29:52 Europe/Tallinn] PHP Notice:  Undefined index: username in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 6
+[23-Oct-2020 15:30:55 Europe/Tallinn] PHP Notice:  Undefined index: score in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 5
+[23-Oct-2020 15:30:55 Europe/Tallinn] PHP Notice:  Undefined index: username in /home/digikap1/digiseiklus.digikapp.ee/digiseiklus/digiseiklus/test.php on line 6

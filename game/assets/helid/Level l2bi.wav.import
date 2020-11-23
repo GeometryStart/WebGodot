@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Level l2bi.wav-090fd4070dc60dac06ec85515d07d581.sample"
+
+[deps]
+
+source_file="res://assets/helid/Level l2bi.wav"
+dest_files=[ "res://.import/Level l2bi.wav-090fd4070dc60dac06ec85515d07d581.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,82 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element4.png" type="Texture" id=1]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element5.png" type="Texture" id=2]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element7.png" type="Texture" id=3]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element8.png" type="Texture" id=4]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element9.png" type="Texture" id=5]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element1.png" type="Texture" id=6]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element2.png" type="Texture" id=7]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element3.png" type="Texture" id=8]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element6.png" type="Texture" id=9]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element18.png" type="Texture" id=10]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element11.png" type="Texture" id=11]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element21.png" type="Texture" id=12]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element16.png" type="Texture" id=13]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element24.png" type="Texture" id=14]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element25.png" type="Texture" id=15]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element28.png" type="Texture" id=16]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element22.png" type="Texture" id=17]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element30.png" type="Texture" id=18]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element10.png" type="Texture" id=19]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element13.png" type="Texture" id=20]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element14.png" type="Texture" id=21]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element17.png" type="Texture" id=22]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element23.png" type="Texture" id=23]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element15.png" type="Texture" id=24]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element26.png" type="Texture" id=25]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element12.png" type="Texture" id=26]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element19.png" type="Texture" id=27]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element29.png" type="Texture" id=28]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element27.png" type="Texture" id=29]
+[ext_resource path="res://assets/objektid/FloppyDisc/disc_element20.png" type="Texture" id=30]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 26 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 13 ), ExtResource( 22 ), ExtResource( 10 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 25 ), ExtResource( 29 ), ExtResource( 16 ), ExtResource( 28 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 109.669, 485.071 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 111.362, 384.208 )
+
+[sub_resource type="SegmentShape2D" id=4]
+a = Vector2( -39.4594, -13.0135 )
+b = Vector2( -18.7989, 6.63097 )
+
+[node name="FloppyDisc" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite" parent="StaticBody2D"]
+position = Vector2( 6, 0 )
+frames = SubResource( 1 )
+frame = 27
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -385.665, -187.289 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D vaska" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 405.193, -86.3737 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D vaska2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 8.73272, -247.255 )
+rotation = -1.5708
+scale = Vector2( 0.984, 0.725 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 696.077, -537.727 )
+scale = Vector2( 10, 10 )
+shape = SubResource( 4 )

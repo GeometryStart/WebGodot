@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Background/Esileht/Nupp_2.png" type="Texture" id=1]
+[ext_resource path="res://objektid/ChangeSceneButton.gd" type="Script" id=2]
+
+[node name="Alusta" type="TextureButton"]
+margin_left = 619.0
+margin_right = 1234.0
+margin_bottom = 875.0
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene_path = "res://src/Vaheleht1.tscn"

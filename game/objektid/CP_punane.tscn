@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/objektid/checkpointi_variant1.png" type="Texture" id=1]
+
+[node name="CP_punane" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 186, 72 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( -69.0295, -146.132, 1761.58, 2439.31 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]

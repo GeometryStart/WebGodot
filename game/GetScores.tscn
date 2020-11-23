@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Xerox_Serif_dynamicfon_Title_big.tres" type="DynamicFont" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+var gameScore = 0
+var	gameUser = \"\"
+func _ready():
+	$HTTPRequest.connect(\"request_completed\", self, \"_on_request_completed\")
+	
+
+func _on_Button_pressed():
+	$HTTPRequest.request(\"https://digiseiklus.digikapp.ee/digiseiklus/scores.txt\")
+
+func _on_request_completed(result, response_code, headers, body):
+	var json = JSON.parse(body.get_string_from_utf8())
+	gameScore = json.result[0].score
+	gameUser = json.result[0].username
+	print(\"User: \" + gameUser + \"score is \" + gameScore)
+	get_node(\"Label\").set_text(\"Your username is : \" + gameUser + \" and your score is \" + gameScore)
+	
+
+
+
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 747.672
+margin_top = 160.769
+margin_right = 1095.67
+margin_bottom = 288.769
+text = "GET SCORES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 632.769
+margin_top = 382.0
+margin_right = 1414.77
+margin_bottom = 814.0
+custom_fonts/font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

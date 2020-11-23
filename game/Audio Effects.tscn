@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/helid/surm1.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/helid/taustamuusika2.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/helid/Vigastus.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/helid/Hüpe.wav" type="AudioStream" id=4]
+
+[node name="Audio Effects" type="Node"]
+
+[node name="küsimuse_taust" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+pitch_scale = 1.03
+
+[node name="Level1_taust" type="AudioStreamPlayer" parent="."]
+
+[node name="Hüpe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="vastus_ok" type="AudioStreamPlayer2D" parent="."]
+
+[node name="vastus_nok" type="AudioStreamPlayer2D" parent="."]
+
+[node name="surm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = 15.935
+
+[node name="chippy_vigastus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="AudioStreamPlayer2D6" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AudioStreamPlayer2D7" type="AudioStreamPlayer2D" parent="."]

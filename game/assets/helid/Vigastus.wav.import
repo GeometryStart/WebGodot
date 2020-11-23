@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Vigastus.wav-98cf088faa21bb25ba063667a465525b.sample"
+
+[deps]
+
+source_file="res://assets/helid/Vigastus.wav"
+dest_files=[ "res://.import/Vigastus.wav-98cf088faa21bb25ba063667a465525b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

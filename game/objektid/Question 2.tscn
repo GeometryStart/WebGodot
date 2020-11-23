@@ -1,0 +1,169 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://objektid/Question.gd" type="Script" id=1]
+[ext_resource path="res://assets/Xerox_Serif_dynamicfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/Background/taust_FINAL (1).png" type="Texture" id=3]
+[ext_resource path="res://assets/Background/küsimuste_popup_puhas.png" type="Texture" id=4]
+
+[sub_resource type="ButtonGroup" id=1]
+
+[node name="Question" type="Control"]
+modulate = Color( 0.0470588, 0.768627, 0.933333, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Sprite"]
+margin_left = 11.0
+margin_top = -48.0
+margin_right = 1907.0
+margin_bottom = 1111.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Question" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0.0470588, 0, 0, 1 )
+margin_left = 480.0
+margin_top = 198.0
+margin_right = 1464.0
+margin_bottom = 317.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Küsimus mis tuleb automaatselt
+ÖäÜSA"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vastusevariant1" type="Label" parent="."]
+modulate = Color( 0.0627451, 0.0588235, 0.0588235, 1 )
+margin_left = 708.888
+margin_top = 334.277
+margin_right = 1663.89
+margin_bottom = 439.277
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 0
+text = "Vastus number 1
+
+"
+align = 3
+autowrap = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Vastusevariant2" type="Label" parent="."]
+modulate = Color( 0.0627451, 0.0588235, 0.0588235, 1 )
+margin_left = 703.898
+margin_top = 455.934
+margin_right = 1657.9
+margin_bottom = 595.934
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 0
+text = "Vastus number 2
+
+
+"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Vastusevariant3" type="Label" parent="."]
+modulate = Color( 0.0627451, 0.0588235, 0.0588235, 1 )
+margin_left = 702.13
+margin_top = 600.049
+margin_right = 1650.13
+margin_bottom = 705.049
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 0
+text = "Vastus number 3
+
+"
+valign = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Vastus1" type="CheckBox" parent="."]
+margin_left = 580.647
+margin_top = 323.419
+margin_right = 611.647
+margin_bottom = 355.419
+grow_horizontal = 0
+grow_vertical = 0
+rect_scale = Vector2( 2, 2 )
+group = SubResource( 1 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Vastus2" type="CheckBox" parent="."]
+margin_left = 578.439
+margin_top = 445.176
+margin_right = 612.439
+margin_bottom = 481.176
+rect_scale = Vector2( 2, 2 )
+group = SubResource( 1 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Vastus3" type="CheckBox" parent="."]
+margin_left = 574.003
+margin_top = 575.066
+margin_right = 606.003
+margin_bottom = 610.066
+rect_scale = Vector2( 2, 2 )
+group = SubResource( 1 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VASTA" type="Button" parent="."]
+margin_left = 833.218
+margin_top = 776.685
+margin_right = 1159.22
+margin_bottom = 869.685
+text = "VASTA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioEffects" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioEffects"]
+autoplay = true
+[connection signal="pressed" from="Vastus1" to="." method="_on_Vastus1_pressed"]
+[connection signal="pressed" from="Vastus2" to="." method="_on_Vastus2_pressed"]
+[connection signal="pressed" from="Vastus3" to="." method="_on_Vastus3_pressed"]
+[connection signal="pressed" from="VASTA" to="." method="_on_VASTA_pressed"]
