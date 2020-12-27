@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://objektid/Info.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objektid/Alusta.tscn" type="PackedScene" id=2]
@@ -14,6 +14,12 @@
 [ext_resource path="res://assets/Background/Esileht/Nupp_2b.png" type="Texture" id=12]
 [ext_resource path="res://assets/Background/Esileht/Nupp_heli_hover.png" type="Texture" id=13]
 [ext_resource path="res://assets/Background/Esileht/Nupp_3b.png" type="Texture" id=14]
+[ext_resource path="res://assets/Xerox_Serif_dynamicfon_Title.tres" type="DynamicFont" id=15]
+[ext_resource path="res://assets/Xerox_Serif_dynamicfont.tres" type="DynamicFont" id=16]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+render_priority = 2
+blend_mode = 1
 
 [node name="UserInterface" type="Control"]
 anchor_left = 0.5
@@ -50,10 +56,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -474.0
-margin_top = 84.0424
-margin_right = 474.0
-margin_bottom = 320.042
+margin_left = -471.79
+margin_top = 271.86
+margin_right = 476.21
+margin_bottom = 507.86
 columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -61,7 +67,7 @@ __meta__ = {
 
 [node name="Juhend" type="TextureButton" parent="GridContainer"]
 margin_right = 313.0
-margin_bottom = 235.0
+margin_bottom = 236.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -77,7 +83,7 @@ __meta__ = {
 [node name="Alusta" parent="GridContainer" instance=ExtResource( 2 )]
 margin_left = 317.0
 margin_right = 630.0
-margin_bottom = 235.0
+margin_bottom = 236.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
@@ -89,7 +95,7 @@ script = null
 [node name="Tiim" parent="GridContainer" instance=ExtResource( 1 )]
 margin_left = 634.0
 margin_right = 947.0
-margin_bottom = 235.0
+margin_bottom = 236.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
@@ -165,6 +171,59 @@ stream = ExtResource( 5 )
 autoplay = true
 
 [node name="HTTPPOSTRequest" type="HTTPRequest" parent="."]
+
+[node name="Kasutajanimi" type="LineEdit" parent="."]
+modulate = Color( 0.956863, 0.964706, 0.964706, 1 )
+self_modulate = Color( 0.972549, 0.980392, 0.980392, 1 )
+material = SubResource( 1 )
+use_parent_material = true
+anchor_top = 0.0012797
+anchor_bottom = 0.0012797
+margin_left = 837.708
+margin_top = 600.131
+margin_right = 1095.71
+margin_bottom = 646.131
+custom_fonts/font = ExtResource( 15 )
+custom_colors/selection_color = Color( 0.505882, 0.498039, 0.498039, 1 )
+custom_colors/cursor_color = Color( 0.976471, 0.968627, 0.968627, 1 )
+custom_colors/font_color_selected = Color( 0.466667, 0.458824, 0.458824, 1 )
+custom_colors/font_color = Color( 0.980392, 0.972549, 0.972549, 1 )
+placeholder_text = "Kasutajanimi"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Kood" type="LineEdit" parent="."]
+margin_left = 837.546
+margin_top = 659.21
+margin_right = 1095.54
+margin_bottom = 705.21
+custom_fonts/font = ExtResource( 15 )
+custom_colors/selection_color = Color( 0.45098, 0.443137, 0.443137, 1 )
+custom_colors/cursor_color = Color( 0.988235, 0.976471, 0.976471, 1 )
+custom_colors/font_color_selected = Color( 0.458824, 0.458824, 0.458824, 1 )
+custom_colors/font_color = Color( 0.988235, 0.988235, 0.988235, 1 )
+placeholder_text = "Kood"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Vastus" type="Label" parent="."]
+margin_left = 807.328
+margin_top = 710.514
+margin_right = 1262.33
+margin_bottom = 769.514
+custom_fonts/font = ExtResource( 16 )
+custom_colors/font_color = Color( 0.976471, 0.00392157, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPUpdateRequest2" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="GridContainer/Juhend" to="." method="_on_Juhend_pressed"]
 [connection signal="pressed" from="GridContainer/Alusta" to="." method="_on_Alusta_pressed"]
 [connection signal="pressed" from="GridContainer/Tiim" to="." method="_on_Tiim_pressed"]
@@ -172,3 +231,5 @@ autoplay = true
 [connection signal="pressed" from="SoundON2" to="." method="_on_Sound_pressed"]
 [connection signal="pressed" from="SoundOFF" to="." method="_on_Sound_pressed"]
 [connection signal="request_completed" from="HTTPPOSTRequest" to="." method="_on_HTTPPOSTRequest_request_completed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="request_completed" from="HTTPUpdateRequest2" to="." method="_on_HTTPUpdateRequest2_request_completed"]

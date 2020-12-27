@@ -1,23 +1,22 @@
 extends Control
 onready var score: Label = get_node("Label")
-onready var username: Label = get_node("KasutajaL/Username")
+onready var username: Label = get_node("Label2")
 var my_data = {
-		"username": Savetofile.load_save_file(),
+		"username": GameData.userName,
 		"score": GameData.playerScore, 
-		"code": GameData.code
+		"code": GameData.playerCode
 	}
-var my_url="https://digiseiklus.digikapp.ee/digiseiklus/create.php"
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	PlayerData.connect("score_updated", self, "update_interface")
-	
+	username.text = "Kasutaja: %s" %GameData.userName
 	score.text = "Punktid: %s" % GameData.playerScore
-	_make_post_request(my_url, my_data, false)
+	_make_post_request(GameData.update_score_url, my_data, false)
 	
 	
 func _on_Edasi_pressed():
-	OS.shell_open("https://digiseiklus.digikapp.ee/digiseiklus/tulemused.php")
+	OS.shell_open("https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html")
 	get_tree().change_scene("res://src/Vaheleht2.tscn")
 	
 	
@@ -48,3 +47,8 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
 	var data = json.result
 	print("Response is : ", data)	
+
+
+func _on_Edasi2_pressed():
+	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html")')
+	

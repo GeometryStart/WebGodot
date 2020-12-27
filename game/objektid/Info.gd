@@ -1,12 +1,14 @@
 extends Control
 var my_data = {
-		"username": GameData.userName,
-		"score": GameData.playerScore, 
-		"code": GameData.playerCode
+		"username": GameData.userName, 
+		"code": GameData.playerCode,
+		"score": GameData.playerScore
 }
+
 onready var soundON = get_node("SoundON2")
 onready var soundOFF = get_node("SoundOFF")
-var my_url="https://digiseiklus.digikapp.ee/digiseiklus/create.php"
+onready var vastus = get_node("Vastus")
+
 func _ready():
 	
 	var screen_size = OS.get_screen_size(OS.get_current_screen())
@@ -14,13 +16,14 @@ func _ready():
 	var centered_pos = (screen_size - window_size) / 4
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	AudioEffects.get_node("Level1_taust").stop()
-	
+	print(vastus.text)
 
 func _on_Exit_pressed():
-	_make_post_request(my_url, my_data, false)
+	_make_update_request(GameData.update_score_url, my_data, false)
+#	OS.shell_open("https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html")
 	
-	OS.shell_open("https://digiseiklus.digikapp.ee/digiseiklus/tulemused.php")
-
+	
+	
 func _on_Sound_pressed():
 	if soundON.visible == true:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true) 
@@ -48,18 +51,62 @@ func _on_Juhend_pressed():
 	
 
 func _on_Alusta_pressed():
-	get_tree().change_scene("res://src/Vaheleht1.tscn")
+	
+#	get_tree().change_scene("res://src/Vaheleht1.tscn")
+	var username = get_node("Kasutajanimi").text
+	var code = get_node("Kood").text
+	my_data = {
+		"username": username, 
+		"code": code
+	}
+	if !username.empty() and !code.empty():
+		GameData.userName = username
+		GameData.playerCode = code
+		_make_post_request(GameData.save_user_url, my_data, false)
+	else:
+		vastus.text = "Kasutajanimi või kood on sisestamata"
+		
+	
 func _make_post_request(url, data_to_send, use_ssl):
 	# Convert data to json string:
 	var query = JSON.print(data_to_send)
 	print("Sent to server: ", query)
 	# Add 'Content-Type' header:
 	var headers = ["Content-Type: application/json"]
-	$HTTPPOSTRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)	
+	$HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)	
 
 
-func _on_HTTPPOSTRequest_request_completed(result, response_code, headers, body):
-	print("Processing the Response")
-	var json = JSON.parse(body.get_string_from_utf8())
-	var data = json.result
-	print("Response is : ", data)	
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	print("Processing the Response save user")
+	var data = body.get_string_from_utf8()
+#	var data = json.result
+	if response_code == 200:
+		vastus.text = data
+		get_tree().change_scene("res://src/Vaheleht1.tscn")	
+	else: 
+		vastus.text = data
+		print("Mängima ei saa!")
+	
+func _make_update_request(url, data_to_send, use_ssl):
+	# Convert data to json string:
+	var query = JSON.print(data_to_send)
+	print("Update Sent to server: ", query)
+	# Add 'Content-Type' header:
+	var headers = ["Content-Type: application/json"]
+	$HTTPUpdateRequest2.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)	
+
+func _on_HTTPUpdateRequest2_request_completed(result, response_code, headers, body):
+	print("Processing the Response update")
+	var data = body.get_string_from_utf8()
+#	var data = json.result
+	print("Uuendamine õnnestus")
+	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html")')
+	
+#
+	
+	
+	
+		
+		
+	
+	

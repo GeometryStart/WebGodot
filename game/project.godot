@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="Digiseiklus_v1.0"
 config/description="Digiseiklus + küsimused + 2 vastast + animated cd/vent"
-run/main_scene="res://src/Levels/Level1.tscn"
+run/main_scene="res://src/UserInterface.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -47,6 +47,8 @@ Savetofile="*res://savetofile.gd"
 
 window/size/width=1920
 window/size/height=1080
+window/size/test_width=1200
+window/size/test_height=680
 window/stretch/mode="2d"
 
 [input]

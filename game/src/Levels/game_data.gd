@@ -11,7 +11,11 @@ var isRightAnswer = false
 var questionList
 var userName = ""
 var playerScore = 0
-var playerCode = 0
+var playerCode = ""
+var save_user_url = "https://digiseiklus.digikapp.ee/digiseiklus/saveUser.php"
+var update_score_url = "https://digiseiklus.digikapp.ee/digiseiklus/update.php"
+var gameResults_url = "https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html"
+
 
 var CP1_location = Vector2(3877.99,811.591)
 var CP2_location = Vector2(7402.33,700.833)
@@ -25,8 +29,7 @@ func _ready():
 	player_spawn = player_spawn.instance()
 	
 	if get_node("res://src/Levels/Level1.tscn"):
-		GameData.set("player_location", player_location1)
-		GameData.set("userName", userName)	
+		GameData.set("player_location", player_location1)	
 		print("Level1_player location1" + userName )
 		
 	else:
@@ -46,10 +49,10 @@ func _ready():
 		
 var questionList1 = { 
 	1:{
-		"label": "Mida peaksid oma arvutis olevate oluliste failidega tegema? ",
-		"answer1": "Mitte kellelegi neist rääkima.",
-		"answer2": "Salvestama need igaks juhuks mitmesse erinevasse kohta.",
-		"answer_right": "Tegema neist varukoopiad."	
+		"label": "Mängid koos sõpradega arvutis ja avaneb aken: “Kliki siia ja võida miljon eurot!”. Mida teed?  ",
+		"answer1": "Klikin lingil, et täpsemalt uurida ",
+		"answer2": "Küsin sõpradelt, mida teha ",
+		"answer_right": "Sulgen akna ja mängin sõpradega edasi "	
 	 
 	},
 	2:{

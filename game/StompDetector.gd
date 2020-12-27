@@ -12,6 +12,4 @@ func _physics_process(_delta):
 	
 func score() -> void:
 	PlayerData.score += 10
-	GameData.playerScore = PlayerData.score
-	
 	get_parent().queue_free()
