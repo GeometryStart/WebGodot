@@ -8,6 +8,7 @@ onready var usernameL: Label = get_node("CanvasLayer/userLabel")
 
 
 func _ready():
+	
 	screen_size = OS.get_screen_size()# Gets the screen size to test in futur if its change since their
 	#var screen_size = OS.get_screen_size(OS.get_current_screen())
 	#var window_size = OS.get_window_size()
@@ -49,6 +50,13 @@ func _ready():
 		get_node("Checkpoint_green4").visible = true
 		get_node("Checkpoint_red4").visible = false
 		get_node("Checkpoint_red4/CollisionShape2D").set_deferred("disabled", true)
+
+	
+
+
+	
+
+	
 func _process(delta) -> void:
 	if OS.get_screen_size() != screen_size: #Tests if your screen changed in size, e.g a different monitor
 		screen_size = OS.get_screen_size()
@@ -70,3 +78,6 @@ func update_interface() -> void:
 #	PlayerData.user = username
 #	GameData.playerCode = int(data["code"])
 #	usernameL.text = "Kasutaja: %s" % PlayerData.user
+
+
+

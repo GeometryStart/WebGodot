@@ -16,7 +16,7 @@ func _ready():
 	
 	
 func _on_Edasi_pressed():
-	OS.shell_open("https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html")
+	OS.shell_open(GameData.gameResults_url)
 	get_tree().change_scene("res://src/Vaheleht2.tscn")
 	
 	

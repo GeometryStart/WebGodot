@@ -224,6 +224,8 @@ __meta__ = {
 }
 
 [node name="HTTPUpdateRequest2" type="HTTPRequest" parent="."]
+
+[node name="HTTPGetRequest2" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="GridContainer/Juhend" to="." method="_on_Juhend_pressed"]
 [connection signal="pressed" from="GridContainer/Alusta" to="." method="_on_Alusta_pressed"]
 [connection signal="pressed" from="GridContainer/Tiim" to="." method="_on_Tiim_pressed"]
@@ -233,3 +235,4 @@ __meta__ = {
 [connection signal="request_completed" from="HTTPPOSTRequest" to="." method="_on_HTTPPOSTRequest_request_completed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="request_completed" from="HTTPUpdateRequest2" to="." method="_on_HTTPUpdateRequest2_request_completed"]
+[connection signal="request_completed" from="HTTPGetRequest2" to="." method="_on_HTTPGetRequest2_request_completed"]

@@ -9,8 +9,9 @@ onready var soundON = get_node("SoundON2")
 onready var soundOFF = get_node("SoundOFF")
 onready var vastus = get_node("Vastus")
 
+
 func _ready():
-	
+	$HTTPGetRequest2.connect("request_completed", self, "_on_HTTPGetRequest2_request_completed")
 	var screen_size = OS.get_screen_size(OS.get_current_screen())
 	var window_size = OS.get_window_size()
 	var centered_pos = (screen_size - window_size) / 4
@@ -55,17 +56,15 @@ func _on_Alusta_pressed():
 #	get_tree().change_scene("res://src/Vaheleht1.tscn")
 	var username = get_node("Kasutajanimi").text
 	var code = get_node("Kood").text
-	my_data = {
-		"username": username, 
-		"code": code
-	}
+	
 	if !username.empty() and !code.empty():
 		GameData.userName = username
 		GameData.playerCode = code
-		_make_post_request(GameData.save_user_url, my_data, false)
+		$HTTPGetRequest2.request("https://digiseiklus.digikapp.ee/digiseiklus/code.txt")
+		
 	else:
 		vastus.text = "Kasutajanimi või kood on sisestamata"
-		
+	
 	
 func _make_post_request(url, data_to_send, use_ssl):
 	# Convert data to json string:
@@ -100,9 +99,20 @@ func _on_HTTPUpdateRequest2_request_completed(result, response_code, headers, bo
 	var data = body.get_string_from_utf8()
 #	var data = json.result
 	print("Uuendamine õnnestus")
-	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html")')
-	
-#
+	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/tulemused2.html")')
+
+func _on_HTTPGetRequest2_request_completed(result, response_code, headers, body):
+	var json = JSON.parse(body.get_string_from_utf8())
+	print("get things from website: ", json.result)
+	print(GameData.playerCode, GameData.userName)
+	if float(GameData.playerCode) != json.result:
+		vastus.text = "Vale kood, proovi uuesti"
+	else:
+		var my_data = {
+		"username": GameData.userName, 
+		"code": GameData.playerCode
+		}
+		_make_post_request(GameData.save_user_url, my_data, false)
 	
 	
 	

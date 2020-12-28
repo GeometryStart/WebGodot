@@ -11,11 +11,11 @@ var isRightAnswer = false
 var questionList
 var userName = ""
 var playerScore = 0
-var playerCode = ""
-var save_user_url = "https://digiseiklus.digikapp.ee/digiseiklus/saveUser.php"
-var update_score_url = "https://digiseiklus.digikapp.ee/digiseiklus/update.php"
-var gameResults_url = "https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html"
-
+var playerCode = 0000
+var save_user_url = "https://digiseiklus.digikapp.ee/saveUser.php"
+var update_score_url = "https://digiseiklus.digikapp.ee/update.php"
+var gameResults_url = "https://digiseiklus.digikapp.ee/tulemused2.html"
+var checkpointPassed
 
 var CP1_location = Vector2(3877.99,811.591)
 var CP2_location = Vector2(7402.33,700.833)

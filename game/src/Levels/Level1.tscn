@@ -1043,5 +1043,8 @@ autoplay = "fade_out"
 anims/fade_out = SubResource( 2 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="HTTPGetRequest2" type="HTTPRequest" parent="."]
 [connection signal="body_entered" from="Checkpoint_red1" to="Checkpoint_red1" method="_on_Checkpoint_red1_body_entered"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_request_completed"]
+[connection signal="request_completed" from="HTTPGetRequest2" to="." method="_on_HTTPGetRequest2_request_completed"]
