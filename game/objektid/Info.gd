@@ -20,6 +20,7 @@ func _ready():
 	print(vastus.text)
 
 func _on_Exit_pressed():
+	print("On exit pressed score on: ", GameData.playerScore)
 	_make_update_request(GameData.update_score_url, my_data, false)
 #	OS.shell_open("https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html")
 	

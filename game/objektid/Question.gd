@@ -94,7 +94,7 @@ func _on_Vastus3_pressed():
 
 func _on_VASTA_pressed():
 	if counter >= 1 and !GameData.isCheckpoint5:
-		get_tree().change_scene("res://objektid/Question_AnswerRight.tscn")
+		get_tree().change_scene("res://src/Tase_läbitud.tscn")
 	elif counter >=1 and GameData.isCheckpoint5:
 		get_tree().change_scene("res://src/Tase_läbitud.tscn")
 		print("Chekpoint5 läbitud ja punktid on: ", PlayerData.score)

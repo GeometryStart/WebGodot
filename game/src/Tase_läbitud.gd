@@ -10,8 +10,8 @@ var my_data = {
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	PlayerData.connect("score_updated", self, "update_interface")
-	username.text = "Kasutaja: %s" %GameData.userName
-	score.text = "Punktid: %s" % GameData.playerScore
+	username.text = GameData.userName
+	score.text = str(GameData.playerScore)
 	_make_post_request(GameData.update_score_url, my_data, false)
 	
 	
@@ -49,6 +49,5 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	print("Response is : ", data)	
 
 
-func _on_Edasi2_pressed():
-	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html")')
-	
+func _on_TextureButton_pressed():
+	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/tulemused2.html")')

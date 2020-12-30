@@ -63,9 +63,9 @@ func _process(delta) -> void:
 		OS.set_window_size(screen_size)# Sets your window to your screen size
 func update_interface() -> void:
 	score.text = "Punktid: %s" % PlayerData.score
-	GameData.playerScore = PlayerData.score
 	usernameL.text = "Kasutaja: %s" % GameData.userName
-	
+	GameData.playerScore = PlayerData.score
+	print("Mängu ajal skoorid on: ", GameData.playerScore)
 #func _on_request_completed(result, response_code, headers, body):
 #	var uniqueId = OS.get_unique_id()
 #
