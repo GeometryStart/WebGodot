@@ -13,7 +13,7 @@ func _ready():
 	username.text = GameData.userName
 	score.text = str(GameData.playerScore)
 	_make_post_request(GameData.update_score_url, my_data, false)
-	
+
 	
 func _on_Edasi_pressed():
 	OS.shell_open(GameData.gameResults_url)

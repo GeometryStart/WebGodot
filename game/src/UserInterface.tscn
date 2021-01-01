@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://objektid/Info.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Background/Esileht/Nupp_3.png" type="Texture" id=1]
 [ext_resource path="res://objektid/Alusta.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Background/Esileht/Esileht_nuppudeta.png" type="Texture" id=3]
 [ext_resource path="res://assets/Background/Esileht/Nupp_1.png" type="Texture" id=4]
@@ -92,17 +92,21 @@ expand = true
 stretch_mode = 3
 script = null
 
-[node name="Tiim" parent="GridContainer" instance=ExtResource( 1 )]
+[node name="Tiim" type="TextureButton" parent="GridContainer"]
 margin_left = 634.0
 margin_right = 947.0
 margin_bottom = 236.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource( 1 )
 texture_hover = ExtResource( 14 )
 expand = true
 stretch_mode = 3
-script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Exit" type="TextureButton" parent="."]
 margin_left = 1789.15
@@ -177,9 +181,12 @@ margin_left = 841.805
 margin_top = 544.297
 margin_right = 1096.81
 margin_bottom = 589.297
-custom_fonts/font = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Kasutajanimi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Kasutajanimi" type="LineEdit" parent="."]
 modulate = Color( 0.956863, 0.964706, 0.964706, 1 )

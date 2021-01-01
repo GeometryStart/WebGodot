@@ -1,6 +1,6 @@
 extends Node2D
 var timer = null
-
+onready var rightAnswer: Label = get_node("rightAnswer")
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	timer = Timer.new()
@@ -9,6 +9,7 @@ func _ready():
 	timer.connect("timeout", self, "on_timeout")
 	add_child(timer)
 	timer.start()
+	rightAnswer.text = "Õige vastus on: %s" % GameData.rightAnswer
 	
 func on_timeout():
 	if CheckpointRed1.isCheckpoint1:

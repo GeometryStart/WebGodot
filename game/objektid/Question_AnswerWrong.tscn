@@ -21,10 +21,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -696.0
-margin_top = -388.0
-margin_right = 696.0
-margin_bottom = 388.0
+margin_left = -701.801
+margin_top = -378.814
+margin_right = 690.199
+margin_bottom = 397.186
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -33,10 +33,10 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 0.0627451, 0.0588235, 0.0588235, 1 )
-margin_left = 558.565
-margin_top = 458.359
-margin_right = 1373.56
-margin_bottom = 864.359
+margin_left = 550.444
+margin_top = 428.194
+margin_right = 1365.44
+margin_bottom = 834.194
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 5 )
 custom_constants/line_spacing = 0
@@ -78,6 +78,17 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
 text = "VÄLJU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rightAnswer" type="Label" parent="."]
+margin_left = 555.0
+margin_top = 657.0
+margin_right = 1381.0
+margin_bottom = 759.0
+custom_fonts/font = ExtResource( 4 )
+text = "Õige vastus:"
 __meta__ = {
 "_edit_use_anchors_": false
 }

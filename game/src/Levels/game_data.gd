@@ -15,7 +15,8 @@ var playerCode = 0000
 var save_user_url = "https://digiseiklus.digikapp.ee/saveUser.php"
 var update_score_url = "https://digiseiklus.digikapp.ee/update.php"
 var gameResults_url = "https://digiseiklus.digikapp.ee/tulemused2.html"
-var checkpointPassed
+var answeredQuestion = ""
+var rightAnswer
 
 var CP1_location = Vector2(3877.99,811.591)
 var CP2_location = Vector2(7402.33,700.833)
@@ -46,6 +47,7 @@ func _ready():
 	
 	GameData.set("playerScore", playerScore)
 	GameData.set("playerCode", playerCode)
+	GameData.set("rightAnswer", rightAnswer)
 		
 var questionList1 = { 
 	1:{

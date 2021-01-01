@@ -30,33 +30,24 @@ func _ready():
 	
 
 	if location >= GameData.CP1_location and location < GameData.CP2_location and GameData.isCheckpointPassed == true:
-		print("Chips 1",location)
 		get_node("Checkpoint_green1").visible = true
 		get_node("Checkpoint_red1").visible = false
 		get_node("Checkpoint_red1/CollisionShape2D").set_deferred("disabled", true)
 	if location >= GameData.CP2_location and location <= GameData.CP3_location and GameData.isCheckpointPassed == true:
-		print("Chippy location2: ", location)
 		get_node("Checkpoint_green2").visible = true
 		get_node("Checkpoint_red2").visible = false
 		get_node("Checkpoint_red2/CollisionShape2D").set_deferred("disabled", true)
 		
 	if location >= GameData.CP3_location and location <= GameData.CP4_location and GameData.isCheckpointPassed == true:
-		print("Chippy location3: ", location)
 		get_node("Checkpoint_green3").visible = true
 		get_node("Checkpoint_red3").visible = false
 		get_node("Checkpoint_red3/CollisionShape2D").set_deferred("disabled", true)
 	if location >= GameData.CP4_location and location <= get_node("Checkpoint_red5").teleport_location and GameData.isCheckpointPassed == true:
-		print("Chippy location4: ", location)
 		get_node("Checkpoint_green4").visible = true
 		get_node("Checkpoint_red4").visible = false
 		get_node("Checkpoint_red4/CollisionShape2D").set_deferred("disabled", true)
 
-	
 
-
-	
-
-	
 func _process(delta) -> void:
 	if OS.get_screen_size() != screen_size: #Tests if your screen changed in size, e.g a different monitor
 		screen_size = OS.get_screen_size()
@@ -65,19 +56,7 @@ func update_interface() -> void:
 	score.text = "Punktid: %s" % PlayerData.score
 	usernameL.text = "Kasutaja: %s" % GameData.userName
 	GameData.playerScore = PlayerData.score
-	print("Mängu ajal skoorid on: ", GameData.playerScore)
-#func _on_request_completed(result, response_code, headers, body):
-#	var uniqueId = OS.get_unique_id()
-#
-#	print("Processing the Response")
-#	var json = JSON.parse(body.get_string_from_utf8())
-#	var data = json.result
-#	print("GetData processed: ", data)
-#	var username = data["username"]
-#
-#	PlayerData.user = username
-#	GameData.playerCode = int(data["code"])
-#	usernameL.text = "Kasutaja: %s" % PlayerData.user
+	
 
 
 

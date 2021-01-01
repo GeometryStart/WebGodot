@@ -20,11 +20,9 @@ func _ready():
 	print(vastus.text)
 
 func _on_Exit_pressed():
-	print("On exit pressed score on: ", GameData.playerScore)
 	_make_update_request(GameData.update_score_url, my_data, false)
 #	OS.shell_open("https://digiseiklus.digikapp.ee/digiseiklus/tulemused2.html")
-	
-	
+
 	
 func _on_Sound_pressed():
 	if soundON.visible == true:
@@ -42,18 +40,10 @@ func _on_Sound_pressed():
 func _on_Exit_toMain_pressed():
 	get_tree().change_scene("res://src/UserInterface.tscn")
 
-
-func _on_Tiim_pressed():
-	get_tree().change_scene("res://src/Tiimist.tscn")
-	
-
-
 func _on_Juhend_pressed():
 	get_tree().change_scene("res://src/Juhend.tscn")
 	
-
 func _on_Alusta_pressed():
-	
 #	get_tree().change_scene("res://src/Vaheleht1.tscn")
 	var username = get_node("Kasutajanimi").text
 	var code = get_node("Kood").text
@@ -105,7 +95,6 @@ func _on_HTTPUpdateRequest2_request_completed(result, response_code, headers, bo
 func _on_HTTPGetRequest2_request_completed(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
 	print("get things from website: ", json.result)
-	print(GameData.playerCode, GameData.userName)
 	if float(GameData.playerCode) != json.result:
 		vastus.text = "Vale kood, proovi uuesti"
 	else:
@@ -114,10 +103,7 @@ func _on_HTTPGetRequest2_request_completed(result, response_code, headers, body)
 		"code": GameData.playerCode
 		}
 		_make_post_request(GameData.save_user_url, my_data, false)
-	
-	
-	
-		
-		
-	
-	
+
+func _on_Tiim_pressed():
+	get_tree().change_scene("res://src/Tiimist.tscn")
+

@@ -14,7 +14,7 @@ var randomList
 
 onready var button_right = get_node("VASTA")
 
-var rightAnswer 
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	randomize()
@@ -49,7 +49,7 @@ func _ready():
 			answersL.insert(0, ans)
 		else: 
 			if ans == randomList.get("answer_right"):
-				rightAnswer = ans
+				GameData.rightAnswer = ans
 				answersL.insert(0, ans)
 					
 
@@ -61,9 +61,9 @@ func _ready():
 var counter = 0	
 
 func _on_Vastus1_pressed():
-	if rightAnswer == get_node("Vastuste_container/RadioBtn_conteiner/Vastus1").text:
+	if GameData.rightAnswer == get_node("Vastuste_container/RadioBtn_conteiner/Vastus1").text:
 		counter += 1
-		print(counter, rightAnswer)
+		print(counter, GameData.rightAnswer)
 		GameData.isCheckpointPassed = true
 	else:
 		if counter >= 1:
@@ -71,9 +71,9 @@ func _on_Vastus1_pressed():
 		print(counter, "vale vastus")
 
 func _on_Vastus2_pressed():
-	if  rightAnswer == get_node("Vastuste_container/RadioBtn_conteiner/Vastus2").text:
+	if  GameData.rightAnswer == get_node("Vastuste_container/RadioBtn_conteiner/Vastus2").text:
 		counter += 1
-		print(counter, rightAnswer)
+		print(counter, GameData.rightAnswer)
 		GameData.isCheckpointPassed = true
 	else:
 		if counter >= 1:
@@ -82,9 +82,9 @@ func _on_Vastus2_pressed():
 	
 
 func _on_Vastus3_pressed():
-	if rightAnswer == get_node("Vastuste_container/RadioBtn_conteiner/Vastus3").text:
+	if GameData.rightAnswer == get_node("Vastuste_container/RadioBtn_conteiner/Vastus3").text:
 		counter += 1
-		print(counter," ", rightAnswer)
+		print(counter," ", GameData.rightAnswer)
 		GameData.isCheckpointPassed = true
 	else:
 		if counter >= 1:
@@ -94,7 +94,7 @@ func _on_Vastus3_pressed():
 
 func _on_VASTA_pressed():
 	if counter >= 1 and !GameData.isCheckpoint5:
-		get_tree().change_scene("res://src/Tase_läbitud.tscn")
+		get_tree().change_scene("res://objektid/Question_AnswerRight.tscn")
 	elif counter >=1 and GameData.isCheckpoint5:
 		get_tree().change_scene("res://src/Tase_läbitud.tscn")
 		print("Chekpoint5 läbitud ja punktid on: ", PlayerData.score)
