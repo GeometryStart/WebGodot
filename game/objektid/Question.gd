@@ -64,6 +64,7 @@ func _on_Vastus1_pressed():
 	if GameData.rightAnswer == get_node("Vastuste_container/RadioBtn_conteiner/Vastus1").text:
 		counter += 1
 		print(counter, GameData.rightAnswer)
+		score()
 		GameData.isCheckpointPassed = true
 	else:
 		if counter >= 1:
@@ -74,6 +75,7 @@ func _on_Vastus2_pressed():
 	if  GameData.rightAnswer == get_node("Vastuste_container/RadioBtn_conteiner/Vastus2").text:
 		counter += 1
 		print(counter, GameData.rightAnswer)
+		score()
 		GameData.isCheckpointPassed = true
 	else:
 		if counter >= 1:
@@ -85,6 +87,7 @@ func _on_Vastus3_pressed():
 	if GameData.rightAnswer == get_node("Vastuste_container/RadioBtn_conteiner/Vastus3").text:
 		counter += 1
 		print(counter," ", GameData.rightAnswer)
+		score()
 		GameData.isCheckpointPassed = true
 	else:
 		if counter >= 1:
@@ -102,3 +105,6 @@ func _on_VASTA_pressed():
 		get_tree().change_scene("res://objektid/Question_AnswerWrong.tscn")	
 		
 
+func score() -> void:
+	PlayerData.score += 20
+	

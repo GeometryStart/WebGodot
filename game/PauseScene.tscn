@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/Nupp_väljun_all.png" type="Texture" id=1]
+[ext_resource path="res://assets/Nupp_väljun.png" type="Texture" id=2]
+[ext_resource path="res://assets/Nupp_väljunEi.png" type="Texture" id=3]
+[ext_resource path="res://assets/Nupp_väljunEi_all.png" type="Texture" id=4]
+[ext_resource path="res://PauseScene.gd" type="Script" id=5]
+[ext_resource path="res://assets/Background/taust_FINAL (1).png" type="Texture" id=6]
+[ext_resource path="res://assets/zorque.tres" type="DynamicFont" id=7]
+
+[node name="PauseScene" type="Control"]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 504.0, 430.0 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 1284.0, 610.0 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 3.90112
+margin_top = 2.08173
+margin_right = 1923.9
+margin_bottom = 1083.08
+color = Color( 0.592157, 0.670588, 0.678431, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -632.0
+margin_top = -379.0
+margin_right = 632.0
+margin_bottom = 379.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="ExitToMain" type="TextureButton" parent="ColorRect"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -440.919
+margin_top = -632.376
+margin_right = 21.0808
+margin_bottom = -176.376
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 1 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="TextureButton" parent="ColorRect"]
+pause_mode = 2
+margin_left = 993.546
+margin_top = 544.831
+margin_right = 1269.55
+margin_bottom = 804.831
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundON" type="TextureButton" parent="ColorRect"]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -895.318
+margin_top = -487.823
+margin_right = -831.318
+margin_bottom = -423.822
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 4
+size_flags_vertical = 12
+size_flags_stretch_ratio = 4.03
+toggle_mode = true
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundOFF" type="TextureButton" parent="ColorRect"]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -899.892
+margin_top = -489.143
+margin_right = -835.892
+margin_bottom = -425.143
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 4
+size_flags_vertical = 12
+size_flags_stretch_ratio = 4.03
+toggle_mode = true
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -411.5
+margin_top = -124.0
+margin_right = 411.5
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 7 )
+text = "Kas soovid mängust väljuda?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPUpdateRequest2" type="HTTPRequest" parent="."]
+[connection signal="pressed" from="ColorRect/ExitToMain" to="." method="_on_ExitToMain_pressed"]
+[connection signal="pressed" from="ColorRect/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="button_up" from="ColorRect/SoundON" to="." method="_on_SoundON_button_up"]
+[connection signal="button_up" from="ColorRect/SoundOFF" to="." method="_on_SoundOFF_button_up"]
+[connection signal="request_completed" from="HTTPUpdateRequest2" to="." method="_on_HTTPUpdateRequest2_request_completed"]

@@ -50,4 +50,4 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 
 
 func _on_TextureButton_pressed():
-	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/tulemused2.html")')
+	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/ver1/tulemused.php")')

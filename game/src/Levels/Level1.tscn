@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://objektid/ram.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://objektid/Checkpoint_red5.tscn" type="PackedScene" id=23]
 [ext_resource path="res://objektid/mummud.tscn" type="PackedScene" id=24]
 [ext_resource path="res://objektid/mummud_aeglasem.tscn" type="PackedScene" id=25]
+[ext_resource path="res://PauseScene.tscn" type="PackedScene" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7761.66, 6.36108 )
@@ -78,6 +79,13 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="PauseScene" parent="CanvasLayer" instance=ExtResource( 26 )]
+visible = false
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 1.0
+margin_bottom = -1.0
 
 [node name="Taust" type="Node2D" parent="."]
 __meta__ = {

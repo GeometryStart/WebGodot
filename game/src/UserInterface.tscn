@@ -196,15 +196,16 @@ use_parent_material = true
 anchor_top = 0.0012797
 anchor_bottom = 0.0012797
 margin_left = 841.218
-margin_top = 578.352
+margin_top = 578.073
 margin_right = 1099.22
-margin_bottom = 624.352
+margin_bottom = 624.073
 custom_fonts/font = ExtResource( 15 )
-custom_colors/selection_color = Color( 0.505882, 0.498039, 0.498039, 1 )
-custom_colors/cursor_color = Color( 0.976471, 0.968627, 0.968627, 1 )
+custom_colors/selection_color = Color( 0.960784, 0.941176, 0.941176, 1 )
+custom_colors/cursor_color = Color( 0.988235, 0.980392, 0.980392, 1 )
 custom_colors/font_color_selected = Color( 0.466667, 0.458824, 0.458824, 1 )
 custom_colors/font_color = Color( 0.980392, 0.972549, 0.972549, 1 )
 caret_blink = true
+caret_blink_speed = 0.72
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -222,9 +223,9 @@ __meta__ = {
 }
 
 [node name="Kood" type="LineEdit" parent="."]
-margin_left = 840.491
+margin_left = 841.327
 margin_top = 663.49
-margin_right = 1100.49
+margin_right = 1101.33
 margin_bottom = 709.49
 custom_fonts/font = ExtResource( 15 )
 custom_colors/selection_color = Color( 0.45098, 0.443137, 0.443137, 1 )

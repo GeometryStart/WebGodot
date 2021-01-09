@@ -51,7 +51,7 @@ func _on_Alusta_pressed():
 	if !username.empty() and !code.empty():
 		GameData.userName = username
 		GameData.playerCode = code
-		$HTTPGetRequest2.request("https://digiseiklus.digikapp.ee/digiseiklus/code.txt")
+		$HTTPGetRequest2.request(GameData.getGameCode)
 		
 	else:
 		vastus.text = "Kasutajanimi või kood on sisestamata"
@@ -90,7 +90,7 @@ func _on_HTTPUpdateRequest2_request_completed(result, response_code, headers, bo
 	var data = body.get_string_from_utf8()
 #	var data = json.result
 	print("Uuendamine õnnestus")
-	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/tulemused2.html")')
+	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/ver1/tulemused.php")')
 
 func _on_HTTPGetRequest2_request_completed(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
