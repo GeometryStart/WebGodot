@@ -11,6 +11,10 @@ onready var vastus = get_node("Vastus")
 
 
 func _ready():
+	get_node("Kasutajanimi").modulate = Color(30,171,171)
+	get_node("Kood").modulate = Color(30,171,171)
+	get_node("Kasutajanimi").add_color_override("font_color", Color.black)
+	get_node("Kood").add_color_override("font_color", Color.black)
 	$HTTPGetRequest2.connect("request_completed", self, "_on_HTTPGetRequest2_request_completed")
 	var screen_size = OS.get_screen_size(OS.get_current_screen())
 	var window_size = OS.get_window_size()

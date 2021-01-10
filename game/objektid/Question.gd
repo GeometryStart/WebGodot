@@ -16,6 +16,8 @@ onready var button_right = get_node("VASTA")
 
 
 func _ready():
+	
+	get_node("VASTA").modulate = Color(12,2,46)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	randomize()
 	if CheckpointRed1.isCheckpoint1:

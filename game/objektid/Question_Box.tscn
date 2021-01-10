@@ -1,12 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://objektid/Question.gd" type="Script" id=1]
 [ext_resource path="res://assets/Background/küsimuste_popup_puhas.png" type="Texture" id=2]
 [ext_resource path="res://assets/Background/taust_FINAL (1).png" type="Texture" id=3]
-[ext_resource path="res://assets/Xerox_Serif_dynamicfont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/Xerox Serif Wide Bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/helid/taustamuusika2.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/Xerox_Serif_dynamicfon_Title.tres" type="DynamicFont" id=6]
+[ext_resource path="res://xerox_serif_wide_bold.tres" type="DynamicFont" id=6]
 [ext_resource path="res://PauseScene.tscn" type="PackedScene" id=7]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_color = Color( 0.0509804, 0.0156863, 0.0156863, 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="ButtonGroup" id=1]
 
@@ -39,8 +44,6 @@ __meta__ = {
 }
 
 [node name="Question" type="Label" parent="."]
-modulate = Color( 0.0117647, 0.12549, 0.411765, 1 )
-self_modulate = Color( 0.0156863, 0.137255, 0.431373, 1 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 578.0
@@ -48,7 +51,8 @@ margin_top = 336.824
 margin_right = 1345.0
 margin_bottom = 413.824
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0117647, 0.12549, 0.411765, 1 )
 text = "Küsimus mis tuleb automaatselt"
 align = 1
 valign = 1
@@ -66,13 +70,14 @@ autoplay = true
 [node name="VASTA" type="Button" parent="."]
 modulate = Color( 0.996078, 0.968627, 0.968627, 1 )
 self_modulate = Color( 0.996078, 0.996078, 0.996078, 1 )
-margin_left = 955.0
-margin_top = 710.0
-margin_right = 1108.0
-margin_bottom = 763.0
+margin_left = 888.0
+margin_top = 712.0
+margin_right = 1041.0
+margin_bottom = 765.0
 size_flags_horizontal = 5
 text = "VASTA"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -98,7 +103,7 @@ __meta__ = {
 margin_right = 784.0
 margin_bottom = 82.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0.0117647, 0.12549, 0.411765, 1 )
 group = SubResource( 1 )
 text = "Vastus 1"
@@ -113,7 +118,7 @@ margin_top = 86.0
 margin_right = 784.0
 margin_bottom = 168.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0117647, 0.12549, 0.411765, 1 )
 group = SubResource( 1 )
 text = "Vastus 2"
@@ -128,7 +133,7 @@ margin_top = 172.0
 margin_right = 784.0
 margin_bottom = 256.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0.0117647, 0.12549, 0.411765, 1 )
 group = SubResource( 1 )
 text = "Vastus3"

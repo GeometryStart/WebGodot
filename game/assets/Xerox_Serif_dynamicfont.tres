@@ -1,9 +1,6 @@
-[gd_resource type="DynamicFont" load_steps=2 format=2]
-
-[ext_resource path="res://assets/ABALC.TTF" type="DynamicFontData" id=1]
+[gd_resource type="DynamicFont" format=2]
 
 [resource]
-size = 28
+size = 20
 outline_color = Color( 0.952941, 0.941176, 0.941176, 1 )
 use_filter = true
-font_data = ExtResource( 1 )

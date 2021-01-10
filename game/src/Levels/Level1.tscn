@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://objektid/ram.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -14,7 +14,7 @@
 [ext_resource path="res://objektid/Checkpoint_green1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://objektid/Checkpoint_green2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://objektid/Checkpoint_green3.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/Xerox_Serif_dynamicfont.tres" type="DynamicFont" id=15]
+[ext_resource path="res://assets/zorque_small.tres" type="DynamicFont" id=15]
 [ext_resource path="res://objektid/CD.tscn" type="PackedScene" id=16]
 [ext_resource path="res://objektid/Vaike_vent.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Vastane_Punane.tscn" type="PackedScene" id=18]
@@ -26,6 +26,8 @@
 [ext_resource path="res://objektid/mummud.tscn" type="PackedScene" id=24]
 [ext_resource path="res://objektid/mummud_aeglasem.tscn" type="PackedScene" id=25]
 [ext_resource path="res://PauseScene.tscn" type="PackedScene" id=26]
+[ext_resource path="res://assets/star_icon.png" type="Texture" id=27]
+[ext_resource path="res://assets/PlayerIcon.png" type="Texture" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7761.66, 6.36108 )
@@ -56,27 +58,25 @@ player = ExtResource( 2 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 1737.59
-margin_top = 35.4447
-margin_right = 2025.59
-margin_bottom = 278.445
+margin_left = 1792.0
+margin_top = 48.0
+margin_right = 2151.0
+margin_bottom = 80.0
 custom_fonts/font = ExtResource( 15 )
-text = "PUNKTID: %s"
+text = "0"
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="userLabel" type="Label" parent="CanvasLayer"]
-margin_left = 1270.0
-margin_top = 36.0
-margin_right = 1716.0
-margin_bottom = 180.0
+margin_left = 104.0
+margin_top = 56.0
+margin_right = 580.0
+margin_bottom = 87.0
 custom_fonts/font = ExtResource( 15 )
-text = "KASUTAJA: %s"
+text = "Kerttupikkkasutaja"
 autowrap = true
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -86,6 +86,26 @@ margin_left = 1.0
 margin_top = -1.0
 margin_right = 1.0
 margin_bottom = -1.0
+
+[node name="ScoreIcon" type="TextureRect" parent="CanvasLayer"]
+margin_left = 1744.0
+margin_top = 48.0
+margin_right = 1784.0
+margin_bottom = 82.0
+texture = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserIcon" type="TextureRect" parent="CanvasLayer"]
+margin_left = 16.0
+margin_top = 13.0
+margin_right = 116.0
+margin_bottom = 102.0
+texture = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Taust" type="Node2D" parent="."]
 __meta__ = {
@@ -361,7 +381,7 @@ position = Vector2( 319.41, 87.7614 )
 position = Vector2( 176.169, 392.676 )
 
 [node name="mummud_aeglasem3" parent="mummudTaustal" instance=ExtResource( 25 )]
-position = Vector2( 1169.8, 264.254 )
+position = Vector2( 1169.15, 262.302 )
 
 [node name="mummud_aeglasem4" parent="mummudTaustal" instance=ExtResource( 25 )]
 position = Vector2( 1059.48, 409.141 )

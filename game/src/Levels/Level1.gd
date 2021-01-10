@@ -53,8 +53,8 @@ func _process(delta) -> void:
 		screen_size = OS.get_screen_size()
 		OS.set_window_size(screen_size)# Sets your window to your screen size
 func update_interface() -> void:
-	score.text = "Punktid: %s" % PlayerData.score
-	usernameL.text = "Kasutaja: %s" % GameData.userName
+	score.text = str(PlayerData.score)
+	usernameL.text = GameData.userName
 	GameData.playerScore = PlayerData.score
 	
 
