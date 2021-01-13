@@ -3,6 +3,7 @@ var timer = null
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	get_node("Label").add_color_override("font_color", Color.white)
 	timer = Timer.new()
 	timer.set_one_shot(true)
 	timer.set_wait_time(1.5)

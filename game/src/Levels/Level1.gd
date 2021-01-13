@@ -56,6 +56,7 @@ func update_interface() -> void:
 	score.text = str(PlayerData.score)
 	usernameL.text = GameData.userName
 	GameData.playerScore = PlayerData.score
+	print("Punktid on: ", GameData.playerScore)
 	
 
 

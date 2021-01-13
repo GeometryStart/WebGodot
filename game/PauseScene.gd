@@ -1,12 +1,7 @@
 extends Control
-var my_data = {
-		"username": GameData.userName, 
-		"code": GameData.playerCode,
-		"score": GameData.playerScore
-}
+
 
 func _input(event):
-	
 	if event.is_action_pressed("ui_cancel"):
 		$ColorRect/ExitToMain.grab_focus()
 		get_tree().paused = not get_tree().paused
@@ -21,6 +16,7 @@ func _input(event):
 func _on_Continue_pressed():
 	get_tree().paused = not get_tree().paused
 	visible = not visible
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 #	if TeleporterData.isQuestionBox:
 #		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 #	else:
@@ -28,6 +24,11 @@ func _on_Continue_pressed():
 
 
 func _on_ExitToMain_pressed():
+	var my_data = {
+		"username": GameData.userName, 
+		"code": GameData.playerCode,
+		"score": GameData.playerScore
+	}
 	_make_update_request(GameData.update_score_url, my_data, false)
 	
 	get_tree().paused = not get_tree().paused

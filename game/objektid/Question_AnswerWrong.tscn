@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objektid/Question_AnswerWrong.gd" type="Script" id=1]
 [ext_resource path="res://assets/Background/küsimuste_popup_puhas.png" type="Texture" id=2]
 [ext_resource path="res://assets/Background/taust_FINAL (1).png" type="Texture" id=3]
 [ext_resource path="res://assets/Xerox_Serif_dynamicfont.tres" type="DynamicFont" id=4]
-[ext_resource path="res://assets/Xerox_Serif_dynamicfon_Title_big.tres" type="DynamicFont" id=5]
+[ext_resource path="res://montserrat_regular_big.tres" type="DynamicFont" id=5]
+[ext_resource path="res://xerox_serif_wide_bold.tres" type="DynamicFont" id=6]
 
 [node name="Question_Anwer_wrong" type="Node2D"]
 modulate = Color( 0.0470588, 0.768627, 0.933333, 1 )
@@ -33,10 +34,10 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 0.0627451, 0.0588235, 0.0588235, 1 )
-margin_left = 550.444
-margin_top = 428.194
-margin_right = 1365.44
-margin_bottom = 834.194
+margin_left = 548.313
+margin_top = 412.212
+margin_right = 1363.31
+margin_bottom = 818.212
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 5 )
 custom_constants/line_spacing = 0
@@ -83,11 +84,12 @@ __meta__ = {
 }
 
 [node name="rightAnswer" type="Label" parent="."]
-margin_left = 555.0
-margin_top = 657.0
-margin_right = 1381.0
-margin_bottom = 759.0
-custom_fonts/font = ExtResource( 4 )
+margin_left = 534.0
+margin_top = 699.0
+margin_right = 1360.0
+margin_bottom = 770.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Õige vastus:"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -12,8 +12,11 @@ onready var vastus = get_node("Vastus")
 
 func _ready():
 	get_node("Kasutajanimi").modulate = Color(30,171,171)
-	get_node("Kood").modulate = Color(30,171,171)
+	#get_node("Kasutajanimi").add_color_override("font_color", Color(30,171,171))
+	get_node("Kasutajanimi").add_color_override("cursor_color", Color.black)
 	get_node("Kasutajanimi").add_color_override("font_color", Color.black)
+	get_node("Kood").modulate = Color(30,171,171)
+	get_node("Kood").add_color_override("cursor_color", Color.black)
 	get_node("Kood").add_color_override("font_color", Color.black)
 	$HTTPGetRequest2.connect("request_completed", self, "_on_HTTPGetRequest2_request_completed")
 	var screen_size = OS.get_screen_size(OS.get_current_screen())
@@ -21,7 +24,7 @@ func _ready():
 	var centered_pos = (screen_size - window_size) / 4
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	AudioEffects.get_node("Level1_taust").stop()
-	print(vastus.text)
+	
 
 func _on_Exit_pressed():
 	_make_update_request(GameData.update_score_url, my_data, false)
@@ -75,7 +78,9 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var data = body.get_string_from_utf8()
 #	var data = json.result
 	if response_code == 200:
+		print("Vastuseks saadud: ", data)
 		vastus.text = data
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		get_tree().change_scene("res://src/Vaheleht1.tscn")	
 	else: 
 		vastus.text = data

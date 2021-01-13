@@ -11,9 +11,7 @@ export (Array)  var answers
 var questionList = GameData.questionList1
 var randomList
 
-
 onready var button_right = get_node("VASTA")
-
 
 func _ready():
 	

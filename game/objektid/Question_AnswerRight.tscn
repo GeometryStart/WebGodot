@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Background/küsimuste_popup_puhas.png" type="Texture" id=2]
 [ext_resource path="res://assets/Background/taust_FINAL (1).png" type="Texture" id=3]
 [ext_resource path="res://assets/Xerox_Serif_dynamicfont.tres" type="DynamicFont" id=4]
-[ext_resource path="res://assets/Xerox_Serif_dynamicfon_Title_big.tres" type="DynamicFont" id=6]
+[ext_resource path="res://montserrat_regular_big.tres" type="DynamicFont" id=5]
 
 [node name="Question_Anwer_right" type="Node2D"]
 modulate = Color( 0.0470588, 0.768627, 0.933333, 1 )
@@ -42,7 +42,7 @@ margin_top = 444.995
 margin_right = 1255.18
 margin_bottom = 734.995
 size_flags_horizontal = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 5 )
 custom_constants/line_spacing = 0
 custom_constants/shadow_offset_y = 0
 text = "Tubli! Vastasid õigesti. 
