@@ -12,10 +12,10 @@ var questionList
 var userName = ""
 var playerScore = 0
 var playerCode = 1234
-var save_user_url = "https://digiseiklus.digikapp.ee/ver1/saveUser.php"
-var update_score_url = "https://digiseiklus.digikapp.ee/ver1/update.php"
-var gameResults_url = "https://digiseiklus.digikapp.ee/ver1/tulemused.php"
-var getGameCode = "https://digiseiklus.digikapp.ee/ver1/code.txt"
+var save_user_url = "https://digiseiklus.ee/saveUser.php"
+var update_score_url = "https://digiseiklus.ee/update.php"
+var gameResults_url = "https://digiseiklus.ee/tulemused.php"
+var getGameCode = "https://digiseiklus.ee/code.php"
 var answeredQuestion = ""
 var rightAnswer
 

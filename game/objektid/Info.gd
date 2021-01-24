@@ -11,6 +11,7 @@ onready var vastus = get_node("Vastus")
 
 
 func _ready():
+	InputEventScreenTouch
 	get_node("Kasutajanimi").modulate = Color(30,171,171)
 	#get_node("Kasutajanimi").add_color_override("font_color", Color(30,171,171))
 	get_node("Kasutajanimi").add_color_override("cursor_color", Color.black)
@@ -23,6 +24,7 @@ func _ready():
 	var window_size = OS.get_window_size()
 	var centered_pos = (screen_size - window_size) / 4
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 	AudioEffects.get_node("Level1_taust").stop()
 	
 
@@ -58,7 +60,8 @@ func _on_Alusta_pressed():
 	if !username.empty() and !code.empty():
 		GameData.userName = username
 		GameData.playerCode = code
-		$HTTPGetRequest2.request(GameData.getGameCode)
+		var headers = ["Content-Type: application/json"]
+		$HTTPGetRequest2.request(GameData.getGameCode, headers)
 		
 	else:
 		vastus.text = "Kasutajanimi või kood on sisestamata"
@@ -99,7 +102,7 @@ func _on_HTTPUpdateRequest2_request_completed(result, response_code, headers, bo
 	var data = body.get_string_from_utf8()
 #	var data = json.result
 	print("Uuendamine õnnestus")
-	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/ver1/tulemused.php")')
+	JavaScript.eval('window.location.replace("https://digiseiklus.ee/tulemused.php")')
 
 func _on_HTTPGetRequest2_request_completed(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())

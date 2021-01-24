@@ -4,7 +4,7 @@ var regex = RegEx.new()
 var oldtext = ""
 
 func _ready():
-	regex.compile("^[a-zA-Z0-9]{1,15}$")
+	regex.compile("^[a-zA-Z0-9]{1,10}$")
 
 func _on_Kasutajanimi_text_changed(new_text):
 	if regex.search(new_text):

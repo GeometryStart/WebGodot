@@ -52,7 +52,7 @@ func _ready():
 				GameData.rightAnswer = ans
 				answersL.insert(0, ans)
 					
-
+	answersL.shuffle()
 	get_node("Vastuste_container/RadioBtn_conteiner/Vastus1").set_text(answersL[0]) 
 	get_node("Vastuste_container/RadioBtn_conteiner/Vastus2").set_text(answersL[1])    
 	get_node("Vastuste_container/RadioBtn_conteiner/Vastus3").set_text(answersL[2])

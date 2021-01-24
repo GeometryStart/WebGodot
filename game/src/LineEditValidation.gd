@@ -10,7 +10,6 @@ func _ready():
 func get_value():
 	return(int(text))
 
-
 func _on_Kood_text_changed(new_text):
 	if regex.search(new_text):
 		oldtext = new_text

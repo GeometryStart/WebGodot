@@ -47,4 +47,4 @@ func _on_HTTPUpdateRequest2_request_completed(result, response_code, headers, bo
 	var data = body.get_string_from_utf8()
 #	var data = json.result
 	print("Uuendamine õnnestus")
-	JavaScript.eval('window.location.replace("https://digiseiklus.digikapp.ee/ver1/tulemused.php")')
+	JavaScript.eval('window.location.replace("https://digiseiklus.ee/tulemused.php")')
